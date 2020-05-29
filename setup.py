@@ -105,6 +105,13 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
 
+		
+try:
+	os.system('sudo touch //home/pi/ssh')
+	
+except:
+	pass		
+		
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
@@ -125,7 +132,6 @@ except:
 	pass
 
 os.system('cd ')
-os.system('sudo touch ssh')
 os.system('sudo mv DarkPaw/wpa_supplicant.conf /home/pi/')
 
 
