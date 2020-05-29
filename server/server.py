@@ -13,10 +13,6 @@ import FPV
 import info
 import LED
 import switch
-import test_image
-import test_video
-import RPiCam
-import camera_opencv
 
 functionMode = 0
 
