@@ -1,16 +1,16 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-# File name   : client.py
-# Description : client  
-# Website	 : www.adeept.com
-# E-mail	  : support@adeept.com
-# Author	  : William
-# Date		: 2018/08/22
-# 
+# File name       : DarkPaw.py
+# Description     : client  
+# Author	  : David Metcalf
+# Date		  : 2020/5/29
+#
+
 import cv2
 import zmq
 import base64
 import numpy as np
+
 from socket import *
 import sys
 import time
@@ -498,10 +498,10 @@ def loop():					  #GUI
 		#canvas_rec=canvas_ultra.create_rectangle(0,0,340,30,fill = '#FFFFFF',width=0)
 		#canvas_text=canvas_ultra.create_text((90,11),text='Ultrasonic Output: 0.75m',fill=color_text)
 		################################
-		#Btn_Smooth = tk.Button(root, width=8, text='Smooth',fg=color_text,bg=color_btn,relief='ridge')
-		#Btn_Smooth.place(x=240,y=230)
-		#Btn_Smooth.bind('<ButtonPress-1>', call_Smooth)
-		#root.bind('<KeyPress-f>', call_Smooth)
+		Btn_Smooth = tk.Button(root, width=8, text='Smooth',fg=color_text,bg=color_btn,relief='ridge')
+		Btn_Smooth.place(x=240,y=230)
+		Btn_Smooth.bind('<ButtonPress-1>', call_Smooth)
+		root.bind('<KeyPress-f>', call_Smooth)
 
 		Btn_Switch_1 = tk.Button(root, width=8, text='Port 1',fg=color_text,bg=color_btn,relief='ridge')
 		Btn_Switch_2 = tk.Button(root, width=8, text='Port 2',fg=color_text,bg=color_btn,relief='ridge')
