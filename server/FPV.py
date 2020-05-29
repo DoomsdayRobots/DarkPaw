@@ -10,6 +10,7 @@ import threading
 import cv2
 import zmq
 import base64
+import picamera
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 import argparse
