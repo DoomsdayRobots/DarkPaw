@@ -119,8 +119,16 @@ try:
 		#file_to_write.write("#!/bin/sh\nsudo python3 " + thisPath + "/server/webServer.py")
 except:
 	pass
-
 os.system('sudo chmod 777 //home/pi/startup.sh')
+
+try:
+	os.system('sudo touch //home/pi/wpa_supplicant.conf')
+	with open("//home/pi/wpa_supplicant.conf",'w') as file_to_write:
+		file_to_write.write("country=Us\nupdate_config=1\nctrl_interface=/var/run/wpa_supplicant\n\nnetwork={\nscan_ssid=1\nssid="DoomsDay Robots"\npsk="PuppetsforGod198519772009!"\n")
+except:
+	pass
+
+os.system('sudo chmod 777 //home/pi/wpa_supplicant.conf')
 
 replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
@@ -130,10 +138,6 @@ try: #fix conflict with onboard Raspberry Pi audio
 		file_to_write.write("blacklist snd_bcm2835")
 except:
 	pass
-
-os.system('cd ')
-os.system('sudo mv DarkPaw/wpa_supplicant.conf /home/pi/')
-
 
 print('The program in Raspberry Pi has been installed, disconnected and restarted. \nYou can now power off the Raspberry Pi to install the camera and driver board (Robot HAT). \nAfter turning on again, the Raspberry Pi will automatically run the program to set the servos port signal to turn the servos to the middle position, which is convenient for mechanical assembly.')
 print('restarting...')
