@@ -119,12 +119,14 @@ try:
 		#file_to_write.write("#!/bin/sh\nsudo python3 " + thisPath + "/server/webServer.py")
 except:
 	pass
+
 os.system('sudo chmod 777 //home/pi/startup.sh')
 
 try:
 	os.system('sudo touch //home/pi/wpa_supplicant.conf')
 	with open("//home/pi/wpa_supplicant.conf",'w') as file_to_write:
-		file_to_write.write("country=Us\nupdate_config=1\nctrl_interface=/var/run/wpa_supplicant\n\nnetwork={\nscan_ssid=1\nssid="DoomsDay Robots"\npsk="PuppetsforGod198519772009!"\n")
+		file_to_write.write(" country=Us \n update_config=1 \n ctrl_interface=/var/run/wpa_supplicant \n network={ \n scan_ssid=1 \n ssid=\"DoomsDay Robots\" \n psk=\"PuppetsforGod198519772009!\" \n }")
+		
 except:
 	pass
 
