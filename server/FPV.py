@@ -56,7 +56,7 @@ camera.resolution = (640, 480)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
 # allow the camera to warmup
-time.sleep(0.1)
+#time.sleep(0.1)
 
 temp = 0
 def findLineCtrl(posInput, setCenter):#2
