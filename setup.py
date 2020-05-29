@@ -125,7 +125,7 @@ except:
 	pass
 
 os.system('cd ')
-os.system('touch ssh')
+os.system('sudo touch ssh')
 os.system('sudo mv DarkPaw/wpa_supplicant.conf /home/pi/')
 
 
