@@ -9,7 +9,7 @@ import threading
 import SpiderG
 SpiderG.move_init()
 import os
-#import FPV
+import FPV
 import info
 import LED
 import switch
@@ -41,9 +41,6 @@ def FPV_thread():
 def  ap_thread():
     os.system("sudo create_ap wlan0 eth0 Groovy 12345678")
 
-def vlcSetup():
-    raspivid -o - -t 0 -hf -w 800 -h 400 -fps 24 |cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8160}' :demux=h264
-
 def run():
     global speed_set, functionMode, direction_command, turn_command
 
@@ -54,7 +51,6 @@ def run():
     info_threading=threading.Thread(target=info_send_client)    #Define a thread for FPV and OpenCV
     info_threading.setDaemon(True)                             #'True' means it is a front thread,it would close when the mainloop() closes
     info_threading.start()                                     #Thread starts
-    vlcSetup()
     
     while True: 
         data = ''
