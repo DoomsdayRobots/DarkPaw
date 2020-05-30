@@ -9,7 +9,7 @@ import threading
 import SpiderG
 SpiderG.move_init()
 import os
-import FPV
+#import FPV
 import info
 import LED
 import switch
