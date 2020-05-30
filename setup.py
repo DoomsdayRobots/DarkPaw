@@ -34,7 +34,7 @@ os.system("sudo apt-get -y autoremove")
 # 		break
 
 for x in range(1,4):
-	if os.system("sudo apt-get install vlc") == 0:
+	if os.system("sudo apt-get -y install vlc") == 0:
 		break
 
 for x in range(1,4):
