@@ -36,6 +36,14 @@ os.system("sudo apt-get -y autoremove")
 for x in range(1,4):
 	if os.system("sudo apt-get -y install vlc") == 0:
 		break
+		
+for x in range(1,4):
+	if os.system("sudo apt-get -y install screen") == 0:
+		break
+		
+for x in range(1,4):
+	if os.system("sudo apt-get -y install tmux") == 0:
+		break		
 
 for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
@@ -115,7 +123,7 @@ try:
 	
 except:
 	pass		
-		
+"""		
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
@@ -125,6 +133,7 @@ except:
 	pass
 
 os.system('sudo chmod 777 //home/pi/startup.sh')
+"""
 
 try:
 	os.system('sudo touch //home/pi/wpa_supplicant.conf')
@@ -136,7 +145,7 @@ except:
 
 os.system('sudo chmod 777 //home/pi/wpa_supplicant.conf')
 
-replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
+#replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 try: #fix conflict with onboard Raspberry Pi audio
 	os.system('sudo touch /etc/modprobe.d/snd-blacklist.conf')
