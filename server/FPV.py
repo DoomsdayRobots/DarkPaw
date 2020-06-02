@@ -12,7 +12,6 @@ import zmq
 import base64
 import picamera
 from picamera.array import PiRGBArray
-from picamera import PiCamera
 import argparse
 import imutils
 from collections import deque
@@ -50,13 +49,10 @@ findLineError = 20
 SpiderG.move_init()#2
 
 #2
-# initialize the camera and grab a reference to the raw camera capture
-camera = PiCamera()
+camera = picamera.PiCamera() 
 camera.resolution = (640, 480)
-camera.framerate = 32
+camera.framerate = 20
 rawCapture = PiRGBArray(camera, size=(640, 480))
-# allow the camera to warmup
-#time.sleep(0.1)
 
 temp = 0
 def findLineCtrl(posInput, setCenter):#2
@@ -369,6 +365,6 @@ class FPV:
 if __name__ == '__main__':
     fpv=FPV()
     while 1:
-        fpv.capture_thread('192.168.0.25')
+        fpv.capture_thread('192.168.0.110')
         pass
 
