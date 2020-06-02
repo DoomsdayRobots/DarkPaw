@@ -34,18 +34,6 @@ os.system("sudo apt-get -y autoremove")
 # 		break
 
 for x in range(1,4):
-	if os.system("sudo apt-get -y install vlc") == 0:
-		break
-		
-for x in range(1,4):
-	if os.system("sudo apt-get -y install screen") == 0:
-		break
-		
-for x in range(1,4):
-	if os.system("sudo apt-get -y install tmux") == 0:
-		break		
-
-for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
 		break
 
@@ -117,13 +105,6 @@ for x in range(1,4):
 	if os.system("sudo apt-get install -y util-linux procps hostapd iproute2 iw haveged dnsmasq") == 0:
 		break
 
-		
-try:
-	os.system('sudo touch //home/pi/ssh')
-	
-except:
-	pass		
-"""		
 try:
 	os.system('sudo touch //home/pi/startup.sh')
 	with open("//home/pi/startup.sh",'w') as file_to_write:
@@ -133,19 +114,8 @@ except:
 	pass
 
 os.system('sudo chmod 777 //home/pi/startup.sh')
-"""
 
-try:
-	os.system('sudo touch //home/pi/wpa_supplicant.conf')
-	with open("//home/pi/wpa_supplicant.conf",'w') as file_to_write:
-		file_to_write.write(" country=Us \n update_config=1 \n ctrl_interface=/var/run/wpa_supplicant \n \n network={ \n scan_ssid=1 \n ssid=\"DoomsDay Robots\" \n psk=\"PuppetsforGod198519772009!\" \n }")
-		
-except:
-	pass
-
-os.system('sudo chmod 777 //home/pi/wpa_supplicant.conf')
-
-#replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
+replace_num('/etc/rc.local','fi','fi\n//home/pi/startup.sh start')
 
 try: #fix conflict with onboard Raspberry Pi audio
 	os.system('sudo touch /etc/modprobe.d/snd-blacklist.conf')
