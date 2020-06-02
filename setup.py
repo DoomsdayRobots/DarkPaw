@@ -36,7 +36,11 @@ os.system("sudo apt-get -y autoremove")
 for x in range(1,4):
 	if os.system("sudo pip3 install -U pip") == 0:
 		break
-
+		
+for x in range(1,4):
+	if os.system("sudo apt-get install -y vlc") == 0:
+		break
+		
 for x in range(1,4):
 	if os.system("sudo apt-get install -y python-dev python-pip libfreetype6-dev libjpeg-dev build-essential") == 0:
 		break
