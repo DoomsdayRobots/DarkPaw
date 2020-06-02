@@ -329,7 +329,7 @@ def connection_thread():
 def Info_receive():
 	global CPU_TEP,CPU_USE,RAM_USE
 	HOST = ''
-	INFO_PORT = 2256							#Define port serial 
+	INFO_PORT = 5555							#Define port serial 
 	ADDR = (HOST, INFO_PORT)
 	InfoSock = socket(AF_INET, SOCK_STREAM)
 	InfoSock.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
@@ -363,7 +363,7 @@ def socket_connect():	 #Call this function to connect with the server
 		pass
 	
 	SERVER_IP = ip_adr
-	SERVER_PORT = 10223   #Define port serial 
+	SERVER_PORT = 5555   #Define port serial 
 	BUFSIZ = 1024		 #Define buffer size
 	ADDR = (SERVER_IP, SERVER_PORT)
 	tcpClicSock = socket(AF_INET, SOCK_STREAM) #Set connection value for socket

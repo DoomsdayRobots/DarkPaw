@@ -18,7 +18,7 @@ functionMode = 0
 
 def info_send_client():
     SERVER_IP = addr[0]
-    SERVER_PORT = 2256   #Define port serial 
+    SERVER_PORT = 5555   #Define port serial 
     SERVER_ADDR = (SERVER_IP, SERVER_PORT)
     Info_Socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Set connection value for socket
     Info_Socket.connect(SERVER_ADDR)
@@ -38,8 +38,9 @@ def FPV_thread():
     fpv.capture_thread(addr[0])
 
 
-def  ap_thread():
+def ap_thread():
     os.system("sudo create_ap wlan0 eth0 Groovy 12345678")
+
 
 def run():
     global speed_set, functionMode, direction_command, turn_command
@@ -49,10 +50,10 @@ def run():
     turn_command = 'no'
 
     info_threading=threading.Thread(target=info_send_client)    #Define a thread for FPV and OpenCV
-    info_threading.setDaemon(True)                             #'True' means it is a front thread,it would close when the mainloop() closes
-    info_threading.start()                                     #Thread starts
-    
-    while True: 
+    info_threading.setDaemon(True)                              #'True' means it is a front thread,it would close when the mainloop() closes
+    info_threading.start()                                      #Thread starts
+
+    while True:
         data = ''
         data = str(tcpCliSock.recv(BUFSIZ).decode())
         if not data:
@@ -346,7 +347,7 @@ if __name__ == '__main__':
     switch.set_all_switch_off()
 
     HOST = ''
-    PORT = 10223                              #Define port serial 
+    PORT = 5555                              #Define port serial 
     BUFSIZ = 1024                             #Define buffer size
     ADDR = (HOST, PORT)
 
@@ -363,7 +364,7 @@ if __name__ == '__main__':
             tcpSerSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             tcpSerSock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
             tcpSerSock.bind(ADDR)
-            tcpSerSock.listen(5)                      #Start server,waiting for client
+            tcpSerSock.listen(8)                      #Start server,waiting for client
             print('waiting for connection...')
             tcpCliSock, addr = tcpSerSock.accept()
             print('...connected from :', addr)
